@@ -30,7 +30,7 @@
                <header>
                    <button  name="action" string="Action" type="object" class="btn22"/>
                    <button  name="action_draft" string="Set To Draft" type="object" class="btn22"
-                            attrs="{'invisible': [('state', '==', 'draft')]}"/>
+                            attrs="{'invisible': ['|',('state', '==', 'draft'),('state', '==', 'closed')]}"/>
                    <button  name="action_pending" type="object" class="btn23" string="Pending"
                             attrs="{'invisible': [('state', '!=', 'draft')]}"/>
                    <button  name="action_done" type="object" class="btn24" string="Done"
@@ -45,33 +45,33 @@
                           </h1>
                           <label for="name"/>
                           <h3>
-                              <field name="name"/>
+                              <field name="name" attrs="{'readonly': [('state', '=', 'closed')]}"/>
                           </h3>
                       </div>
                   <group>
                       <group string="General Info.">
-                          <field name="owner_id"/>
-                          <field name="owner_address"/>
-                          <field name="owner_phone"/>
-                          <field name="date_availability" required="1"/>
-                          <field name="expected_selling_date"/>
-                          <field name="postcode"/>
-                          <field name="expected_price"/>
-                          <field name="selling_price"/>
-                          <field name="diff"/>
-                          <field name="is_late" invisible="1"/>
-                          <field name="living_area"/>
-                          <field name="facades"/>
+                          <field name="owner_id" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="owner_address" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="owner_phone" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="date_availability" required="1"  attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="expected_selling_date"  attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="postcode"  attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="expected_price"  attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="selling_price"  attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="diff" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="is_late" invisible="1" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="living_area" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                          <field name="facades" attrs="{'readonly': [('state', '=', 'closed')]}"/>
                       </group>
                       <group string="Additional Info.">
-                           <field name="garage" />
-                           <field name="garden"/>
-                           <field name="state"/>
-                           <field name="bedrooms" />
-                           <field name="garden_area"/>
-                           <field name="garden_orientation"/>
-                           <field name="active"/>
-                           <field name="tag_ids" widget="many2many_tags"/>
+                           <field name="garage" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                           <field name="garden" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                           <field name="state" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                           <field name="bedrooms" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                           <field name="garden_area" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                           <field name="garden_orientation" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                           <field name="active" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                           <field name="tag_ids" widget="many2many_tags"  attrs="{'readonly': [('state', '=', 'closed')]}"/>
                       </group>
                   </group>
                   <group>
@@ -79,7 +79,7 @@
                   </group>
                   <notebook>
                       <page string="Bedrooms">
-                          <field name="property_line_ids" widget="section_and_note_one2many">
+                          <field name="property_line_ids" widget="section_and_note_one2many"  attrs="{'readonly': [('state', '=', 'closed')]}">
                              <tree editable="bottom">
                                  <field name="description"/>
                                  <field name="area"/>

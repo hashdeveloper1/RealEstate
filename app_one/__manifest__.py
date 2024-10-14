@@ -9,6 +9,7 @@
         'data/sequence.xml',
         'views/base_menu.xml',
         'views/property_view.xml',
+        'views/property_history_view.xml',
         'views/building_view.xml',
         'views/owner_view.xml',
         'views/tag_view.xml',
