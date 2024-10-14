@@ -17,7 +17,7 @@
          <field name="name">Property History Form</field>
          <field name="model">property.history</field>
          <field name="arch" type="xml">
-           <form>
+           <form edit="0" create="0" delete="0" >
               <sheet>
                   <group>
                       <group>

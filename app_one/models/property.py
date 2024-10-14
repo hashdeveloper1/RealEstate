@@ -54,18 +54,22 @@ class Property(models.Model):
 
     def action_draft(self):
         for rec in self:
+            rec.create_history_record(rec.state, 'draft')
             rec.state = 'draft'
 
     def action_pending(self):
         for rec in self:
+            rec.create_history_record(rec.state, 'pending')
             rec.state = 'pending'
 
     def action_done(self):
         for rec in self:
+            rec.create_history_record(rec.state, 'done')
             rec.state = 'done'
 
     def action_closed(self):
         for rec in self:
+            rec.create_history_record(rec.state, 'closed')
             rec.state = 'closed'
 
     @api.depends('expected_price', 'selling_price', 'owner_id.phone')
@@ -166,6 +170,15 @@ class Property(models.Model):
         if res.ref == 'New':
             res.ref = self.env['ir.sequence'].next_by_code('property_seq')
         return res
+
+    def create_history_record(self, old_state, new_state):
+        for rec in self:
+            rec.env['property.history'].create({
+                'user_id': rec.env.uid,
+                'property_id': rec.id,
+                'old_state': old_state,
+                'new_state': new_state,
+            })
 
 
 class PropertyLine(models.Model):
