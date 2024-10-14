@@ -19,4 +19,9 @@ A system for managing apartment reservations and real estate listings, built usi
 1. Clone the repository:
    ```bash
    git clone https://github.com/hashdeveloper1/RealEstate.git
+## Installation
+
+1. Download the addon.
+2. Place it in your Odoo addons directory.
+3. Update the apps list and install the addon via the Odoo interface.
 
