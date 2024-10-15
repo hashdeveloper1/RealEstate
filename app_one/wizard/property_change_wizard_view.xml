@@ -5,9 +5,9 @@
          <field name="arch" type="xml">
            <form>
                 <group>
-                  <field name="property_id"/>
-                  <field name="state"/>
-                  <field name="reason"/>
+                  <field name="property_id" invisible="1"/>
+                  <field name="state" required="1"/>
+                  <field name="reason" required="1"/>
                 </group>
                 <footer>
                    <button string="Confirm" type="object" name="action_confirm" class="btn-primary"/>
@@ -17,7 +17,7 @@
          </field>
     </record>
 
-    <record id="property_change_state_wizard_action" model="ir.actions.act_window">
+    <record id="change_state_wizard_action" model="ir.actions.act_window">
          <field name="name">Change State Wizard</field>
          <field name="res_model">change.state</field>
          <field name="target">new</field>

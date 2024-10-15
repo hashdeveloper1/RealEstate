@@ -28,6 +28,7 @@
                       <group>
                            <field name="old_state"/>
                            <field name="new_state"/>
+                           <field name="reason"/>
                       </group>
                   </group>
               </sheet>
