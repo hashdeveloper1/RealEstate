@@ -97,20 +97,20 @@
          </field>
     </record>
 
-<!--    <record id="property_view_search" model="ir.ui.view">-->
-<!--         <field name="name">Property Search</field>-->
-<!--         <field name="model">property</field>-->
-<!--         <field name="arch" type="xml">-->
-<!--           <search>-->
-<!--               <field name="name"/>-->
-<!--               <field name="postcode"/>-->
-<!--               <filter name="is_garden" string="with Garden" domain="[('garden','=','True')]"/>-->
-<!--               <filter name="is_garage" string="With Garage" domain="[('garage','=','True')]"/>-->
-<!--               <filter name="is_not_garden" string="With Not Garden" domain="[('garden','!=','True')]"/>-->
-<!--               <filter name="group_garden" string="Garden" context="{'group_by':'garden'}" />-->
-<!--           </search>-->
-<!--         </field>-->
-<!--    </record>-->
+    <record id="property_view_search" model="ir.ui.view">
+         <field name="name">Property Search</field>
+         <field name="model">property</field>
+         <field name="arch" type="xml">
+           <search>
+               <field name="name"/>
+               <field name="postcode"/>
+               <filter name="is_garden" string="with Garden" domain="[('garden','=','True')]"/>
+               <filter name="is_garage" string="With Garage" domain="[('garage','=','True')]"/>
+               <filter name="is_not_garden" string="With Not Garden" domain="[('garden','!=','True')]"/>
+               <filter name="group_garden" string="Garden" context="{'group_by':'garden'}" />
+           </search>
+         </field>
+    </record>
 
     <record id="property_action" model="ir.actions.act_window">
          <field name="name">Property</field>

@@ -87,15 +87,6 @@ class Property(models.Model):
             'warning': {'title': "Warning", 'message': "negative value", 'type': 'notification'},
         }
 
-    def play_sound(self):
-        playsound('/home/hashem/pythonProject/sound/sound.mp3')
-
-    def play_sound2(self):
-        playsound('/home/hashem/ERP/ERP_Odoo16/odoo/custom_addons/app_one/static/sound/confirm.mp3')
-
-    def play_sound3(self):
-        playsound('/home/hashem/ERP/ERP_Odoo16/odoo/custom_addons/app_one/static/sound/conf.wav')
-
     # noinspection PyTypeChecker
     @api.constrains('bedrooms')
     def _check_bedrooms_grater_zero(self):

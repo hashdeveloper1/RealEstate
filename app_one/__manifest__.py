@@ -3,7 +3,7 @@
     'author': 'Hashem Ahmed',
     'category': 'HashCustom/HashCustom',
     'version': '16.0.0.1.0',
-    'depends': ['base', 'sale_management', 'account', 'mail', 'contacts'],
+    'depends': ['base', 'sale_management', 'account', 'mail', 'contacts', 'web'],
     'data': [
         'security/ir.model.access.csv',
         'data/sequence.xml',
@@ -15,10 +15,14 @@
         'views/tag_view.xml',
         'views/sale_order_view.xml',
         'views/res_partner_view.xml',
+        'wizard/property_change_wizard_view.xml',
         'report/property_report.xml'
     ],
     'assets': {
-        'web.assets_backend': ['app_one/static/src/css/property.css']
+        'web.assets_backend': [
+            '/app_one/static/src/css/property.css',  # CSS file
+            '/app_one/static/src/js/autosave_form.js',  # JS for autosave functionality
+        ],
     },
     'application': True,
 }
